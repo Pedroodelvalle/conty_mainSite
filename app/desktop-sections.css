@@ -1,0 +1,46 @@
+/* Desktop-specific styles for full-height sections */
+@media (min-width: 1024px) {
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  /* First section accounts for header */
+  section:first-of-type {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: calc(100vh - 120px);
+    padding-top: 0;
+  }
+
+  /* All other sections are full height */
+  section:not(:first-of-type) {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+  }
+
+  /* Improve section transitions */
+  .section-transition {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Enhance vertical centering */
+  .vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Fixed header positioning */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
